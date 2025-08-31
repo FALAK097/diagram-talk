@@ -24,8 +24,8 @@ async function convertFilesToDataURLs(files: FileList) {
           };
           reader.onerror = reject;
           reader.readAsDataURL(file);
-        })
-    )
+        }),
+    ),
   );
 }
 
