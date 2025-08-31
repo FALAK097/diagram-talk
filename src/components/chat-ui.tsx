@@ -124,7 +124,9 @@ export const ChatUI = () => {
     setFilePreviews(newPreviews);
 
     return () => {
-      newPreviews.forEach((preview) => URL.revokeObjectURL(preview.url));
+      newPreviews.forEach((preview) => {
+        URL.revokeObjectURL(preview.url);
+      });
     };
   }, [files]);
 
@@ -287,7 +289,7 @@ export const ChatUI = () => {
             {filePreviews.length > 0 && (
               <div className="flex gap-2 overflow-x-auto px-4 py-2">
                 {filePreviews.map((preview, index) => (
-                  <div key={index} className="relative">
+                  <div key={preview.url} className="relative">
                     {preview.type.startsWith("image/") ? (
                       <div className="relative w-16 h-16 rounded overflow-hidden">
                         <Image
@@ -385,7 +387,7 @@ export const ChatUI = () => {
                           .split("")
                           .map((char, i) => (
                             <motion.span
-                              key={i}
+                              key={`${PLACEHOLDERS[placeholderIndex]}-${i}`}
                               variants={letterVariants}
                               style={{ display: "inline-block" }}
                             >

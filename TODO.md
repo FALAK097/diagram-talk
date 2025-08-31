@@ -2,7 +2,7 @@
 
 [X] - Create a Next.js 15 project
 [X] - Set up Tailwind CSS and shadcn/ui
-[] - Implement file upload UI for diagrams
+[X] - Implement file upload UI for diagrams
 [] - Integrate OpenAI Vision API to analyze diagrams
 [] - Generate explanation text from diagram
 [] - Convert explanation text to audio (TTS)

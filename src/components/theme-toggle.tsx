@@ -25,6 +25,7 @@ export function ThemeToggle() {
     <Tooltip>
       <TooltipTrigger asChild>
         <button
+          type="button"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           className="p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors"
           aria-label="Toggle theme"
